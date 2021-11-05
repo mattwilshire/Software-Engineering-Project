@@ -123,8 +123,8 @@
                 If everything is fine it will redirect them to the home page  -->
             <form method="post" action="/">
                 <h2>Login</h2>
-                <input type="text" id="username" name="username" placeholder="Username"><br>
-                <input type="password" id="password" name="password" placeholder="Password"><br>
+                <input type="text" id="username" name="username" placeholder="Username" autocomplete="off"><br>
+                <input type="password" id="password" name="password" placeholder="Password" autocomplete="off"><br>
                 <input type="submit" name="loginBtn" value="Login">
                 <?php
                     if(isset($loginError)) {
@@ -135,8 +135,8 @@
 
             <form method="post" action="/">
                 <h2>Create Account</h2>
-                <input type="text" id="usernameCA" name="usernameCA" placeholder="Username"><br>
-                <input type="email" id="email" name="email" placeholder="Email"><br>
+                <input type="text" id="usernameCA" name="usernameCA" placeholder="Username" autocomplete="off"><br>
+                <input type="email" id="email" name="email" placeholder="Email" autocomplete="off"><br>
                 <input type="password" id="passwordCA" name="passwordCA" placeholder="Password"><br>
                 <input type="password" id="password2CA" name="password2CA" placeholder="Password x2"><br>
                 <input type="submit" name="createAccountBtn" value="Create Account"><br>
