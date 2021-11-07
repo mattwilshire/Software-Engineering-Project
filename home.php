@@ -9,6 +9,7 @@
 	$expYear = $_SESSION['expYear'];
 	$cvc = $_SESSION['cvc'];
 	$created = $_SESSION['created'];
+	$disabledCard = $_SESSION['disabledCard'];
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +29,8 @@
         	<h2>Expiry Month: <span class="value"><?php echo $expMonth; ?></span></h2>
         	<h2>Expiry Year: <span class="value"><?php echo $expYear; ?></span></h2>
         	<h2>CVC: <span class="value"><?php echo $cvc; ?></span></h2>
+
+        	<a href="/virtualcard.php">Renew / Disable Card</a>
 
         </main>
     </body>

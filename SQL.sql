@@ -19,3 +19,7 @@ CREATE TABLE Accounts (
     cvc int,
     PRIMARY KEY (accId)
 );
+
+
+ALTER TABLE Accounts
+ADD disabled BOOLEAN NOT NULL DEFAULT 0;

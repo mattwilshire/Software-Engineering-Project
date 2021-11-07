@@ -23,7 +23,7 @@
 
             if($stmt = mysqli_prepare($SQL_Connection, "SELECT id, username, email, Users.accId, balance, cardNo, expMonth, expYear, cvc, Users.created FROM Users JOIN Accounts ON Users.accId=Accounts.accId WHERE username=?))
             {
-                $stmt->bind_param("ss", $username);
+                $stmt->bind_param("s", $username);
                 $stmt->execute();
                 $result = $stmt->get_result();
                 $array = $result->fetch_assoc();

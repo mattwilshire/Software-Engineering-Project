@@ -29,3 +29,9 @@ header {
 	font-weight: normal;
 	margin-left: 1em;
 }
+
+a {
+	color:  blue;
+	font-weight: bolder;
+	text-decoration: none;
+}
