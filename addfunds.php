@@ -25,18 +25,24 @@
             exit();
         }
 
-		if(isset($_POST['addfunds'])) {
-			$balance += $amount;
-		
-			if($stmt = mysqli_prepare($SQL_Connection, "UPDATE Accounts SET balance=? WHERE accId=?"))
+		if(isset($_POST['addfunds'])) 
+		{
+			if(isset($_POST['amount'])) 
 			{
-				$stmt->bind_param('is', $balance, $accountNumber);
-				if($stmt->execute()) {
-					echo "Added Funds !";
-				} else {
-					echo $stmt->error;
+				$balance += intval($_POST['amount']);
+		
+				if($stmt = mysqli_prepare($SQL_Connection, "UPDATE Accounts SET balance=? WHERE accId=?"))
+				{
+					$stmt->bind_param('is', $balance, $accountNumber);
+					if($stmt->execute()) {
+						echo "Added Funds !";
+					} 
+					else 
+					{
+						echo $stmt->error;
+					}
+					$stmt->close();
 				}
-				$stmt->close();
 			}
 		}
 	}
