@@ -35,3 +35,61 @@ a {
 	font-weight: bolder;
 	text-decoration: none;
 }
+
+.card {
+	margin: 1em auto;
+	width: 300px;
+	background-color: blue;
+	padding: 1em;
+	background: rgb(74,255,104);
+	background: linear-gradient(45deg, rgba(74,255,104,1) 0%, rgba(127,233,255,1) 100%);
+	border-radius: 0.75em;
+	box-shadow: 1px 5px 14px 4px rgba(0,0,0,0.3);
+}
+
+.card > h1 {
+	margin: 0;
+	text-align: left;
+	color:  white;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.cardNo {
+	color: white;
+	font-weight: normal;
+	font-size: 1.5em;
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+	padding-top: 3em;
+	margin-bottom: 0.5em;
+}
+
+.bottom-line {
+	display: flex;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	color:  white;
+}
+
+.cvc {
+	margin-left: 1em;
+}
+
+.options {
+	width: 50%;
+	margin: 2em auto;
+}
+
+.options > h1 {
+	color: gray;
+	margin-bottom: 1.2em;
+	text-align: left;
+}
+
+.options > a {
+	margin: 1em;
+	color: black;
+	border: 1px solid gray;
+	padding:  0.75em;
+}

@@ -32,7 +32,7 @@
             {
                 $stmt->bind_param("ss", $disable, $accountNumber);
                 if($stmt->execute()) {
-                    echo "Card Enabled !";
+                    $success = "Your card has been enabled.";
                     $_SESSION['disabledCard'] = 0;
                 } else {
                     echo $stmt->error;
@@ -47,7 +47,7 @@
             {
                 $stmt->bind_param("ss", $disable, $accountNumber);
                 if($stmt->execute()) {
-                    echo "Card Disabled !";
+                    $success = "Your card has been disabled.";
                     $_SESSION['disabledCard'] = 1;
                 } else {
                     echo $stmt->error;
@@ -63,7 +63,7 @@
             {
                 $stmt->bind_param("sss", $cardNo, $cvc, $accountNumber);
                 if($stmt->execute()) {
-                    echo "Card changed!!";
+                    $success = "Card number and CVC changed successfully.";
                     $_SESSION['cardNo'] = $cardNo;
                     $_SESSION['cvc'] = $cvc;
                 } else {
@@ -82,7 +82,7 @@
     <head>
         <title>Virtual Card</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="css/virtualcard.css">
     </head>
     <body>
         <header>
@@ -107,6 +107,16 @@
                 <h3>Would you like to renew your virtual card?: <h3>
                 <input type="submit" name="renewCard" value="Renew Card"></button>
             </form>
+
+            <?php
+                if(isset($success)) {
+                    echo "<p class='success'>$success</p>";
+                }
+
+                if(isset($error)) {
+                    echo "<p class='error'>$error</p>";
+                }
+            ?>
         </main>
     </body>
 </html>

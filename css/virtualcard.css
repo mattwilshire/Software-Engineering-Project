@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+	font-family: 'Raleway', sans-serif;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+header > h1 {
+	text-align: left;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+header > h2 {
+	margin-left: auto;
+	font-size: 1.25em;
+}
+
+.success {
+	color:  green;
+}
+
+.error {
+	color:  red;
+}

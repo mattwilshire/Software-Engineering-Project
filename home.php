@@ -22,15 +22,22 @@
     <body>
         <header>
         	<h1>Welcome, <?php echo $username; ?></h1>
-        	<h1 id="accNo">Account No: #<?php echo $accountNumber; ?></h1>
+        	<h1 id="accNo">Account No: <span style="font-family: 'Roboto', sans-serif">#<?php echo $accountNumber; ?></span></h1>
         </header>
         <main>
-        	<h2>Card Number: <span class="value"><?php echo $cardNo; ?></span></h2>
-        	<h2>Expiry Month: <span class="value"><?php echo $expMonth; ?></span></h2>
-        	<h2>Expiry Year: <span class="value"><?php echo $expYear; ?></span></h2>
-        	<h2>CVC: <span class="value"><?php echo $cvc; ?></span></h2>
+        	<section class="card">
+        		<h1>Credit Card</h1>
+        		<section class="cardNo"><?php echo $cardNo; ?></section>
+        		<section class="bottom-line">
+        			<section class="expiry">EXP: <?php echo "0" . $expMonth . "/" . $expYear; ?></section>
+        			<section class="cvc">CVC: <?php echo $cvc; ?></section>
+        		</section>
+        	</section>
 
-        	<a href="/virtualcard.php">Renew / Disable Card</a>
+        	<section class="options">
+        		<h1>Card Options</h1>
+        		<a href="/virtualcard.php">RENEW / DISABLE</a>
+        	</section>
 
         </main>
     </body>
