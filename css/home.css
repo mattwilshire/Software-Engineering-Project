@@ -93,3 +93,12 @@ a {
 	border: 1px solid gray;
 	padding:  0.75em;
 }
+
+.balance > h1 {
+	text-align: left;
+}
+
+.balance > section {
+	display: flex;
+	justify-content: space-around;
+}

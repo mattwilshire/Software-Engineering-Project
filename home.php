@@ -10,6 +10,8 @@
 	$cvc = $_SESSION['cvc'];
 	$created = $_SESSION['created'];
 	$disabledCard = $_SESSION['disabledCard'];
+	$USDBalance = $_SESSION['USDBalance'];
+	$GBPBalance = $_SESSION['GBPBalance'];
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +27,25 @@
         	<h1 id="accNo">Account No: <span style="font-family: 'Roboto', sans-serif">#<?php echo $accountNumber; ?></span></h1>
         </header>
         <main>
+        	<section class="balance">
+                <h1>Balance</h1>
+                <section>
+                	<section>
+	                    <h1>Euro</h1>
+	                    <h2><?php echo $balance; ?></h2>
+	                </section>
+	                <section>
+	                    <h1>USD</h1>
+	                    <h2><?php echo $USDBalance; ?></h2>
+	                </section>
+	                <section>
+	                    <h1>GBP</h1>
+	                    <h2><?php echo $GBPBalance; ?></h2>
+	                </section>
+                </section>
+
+           </section>
+
         	<section class="card">
         		<h1>Credit Card</h1>
         		<section class="cardNo"><?php echo $cardNo; ?></section>
