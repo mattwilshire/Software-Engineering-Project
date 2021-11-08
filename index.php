@@ -32,7 +32,7 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            if($stmt = mysqli_prepare($SQL_Connection, "SELECT id, username, email, Users.accId, balance, cardNo, expMonth, expYear, cvc, Users.created, disabled FROM Users JOIN Accounts ON Users.accId=Accounts.accId WHERE username=? AND password=?"))
+            if($stmt = mysqli_prepare($SQL_Connection, "SELECT id, username, email, Users.accId, balance, cardNo, expMonth, expYear, cvc, Users.created, disabled, USDBalance, GBPBalance FROM Users JOIN Accounts ON Users.accId=Accounts.accId WHERE username=? AND password=?"))
             {
                 $stmt->bind_param("ss", $username, $password);
                 $stmt->execute();
@@ -51,6 +51,8 @@
                     $_SESSION['cvc'] = $array['cvc'];
                     $_SESSION["created"] = $array['created'];
                     $_SESSION["disabledCard"] = $array['disabled'];
+                    $_SESSION['USDBalance'] = $array['USDBalance'];
+                    $_SESSION['GBPBalance'] = $array['GBPBalance'];
                     header('Location: home.php');
                     //echo json_encode($array);
                     exit();
