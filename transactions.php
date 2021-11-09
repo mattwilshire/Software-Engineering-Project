@@ -41,9 +41,16 @@
     <main>
 	<h2>Select account to view transactions:</h2>
 	
-	<h3>Current Account</h3>
+	<div class="div1">
+	<p>Current Account</p>
 	<button id="but1" onclick="showCurrent();">Current Account</button>	
-
+	</div>
+	
+	<div class="div1>
+	<p>Savings Account</p>
+	<button id= "but2" onclick="showSavings();"> Savings Account</button>
+	</div>
+		
 	<table id="t1"> 
 	<caption>Current Account Transactions</caption>
 	<tr>
@@ -86,8 +93,7 @@
 
 	?>
 	
-	<!--<h3>Savings Account</h3>
-	<button id= "but2" onclick="showSavings();"> Savings Account</button>
+	<!--
 	
 	<table id="t2">
 	<caption>Savings Account Transactions</caption> 
