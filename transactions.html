@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="transactions.css">
+</head>
+
+<body>
+    <header>
+      <h1>Account Transactions</h1> 
+    </header>
+
+    <main>
+	<h2>Select account to view transactions:</h2>
+	
+	<h3>Current Account</h3>
+	<button id="but1" onclick="showCurrent();">Current Account</button>	
+
+	<table id="t1"> 
+	<caption>Current Account Transactions</caption>
+	<tr>
+	  <th>Date</th>
+	  <th>In/Out</th>
+	  <th>Transaction Amount</th>
+	  <th>Transaction Message</th>
+	  <th>Balance</th>
+	</tr>
+	<tr>
+	  <td> 30/10/2021 </td>
+	  <td> In(+) </td>
+	  <td> 500.99 </td>
+	  <td> Wages </td>
+	  <td> 500.99 </td>
+	</tr>
+	<tr>
+	  <td>5/11/2021</td>
+	  <td> Out(-) </td>
+	  <td> 200.00 </td>
+	  <td> Dunnes Stores </td>
+	  <td> 300.99</td>
+	</tr>
+	</table>
+	
+	<h3>Savings Account</h3>
+	<button id= "but2" onclick="showSavings();"> Savings Account</button>
+	
+	<table id="t2">
+	<caption>Savings Account Transactions</caption> 
+	<tr>
+	  <th>Date</th>
+	  <th>In/Out</th>
+	  <th>Transaction Amount</th>
+	  <th>Transaction Message</th>
+	  <th>Balance</th>
+	</tr>
+	<tr>
+	  <td>1/11/2021</td>
+	  <td>In(+)</td>
+	  <td>100.00</td>
+	  <td>From Current A/C</td>
+	  <td>100.00</td>
+	</tr>
+	<tr>
+	  <td>2/11/2021</td>
+	  <td>Out(-)</td>
+	  <td>50.00</td>
+	  <td>To Current A/C</td>
+	  <td>50.00</td>
+	</tr>
+
+	</table>
+
+	<script>
+	  function showCurrent() {
+  	    var p = document.getElementById("t1");
+	    var displaySetting = p.style.display;
+	    var button = document.getElementById('but1');
+	    if (displaySetting == 'block') {
+	        p.style.display = 'none';
+		button.innerHTML = 'Show Transactions';
+	    }
+	    else{
+		p.style.display = 'block';
+		button.innerHTML = 'Hide Transactions';
+  	    }
+	}
+	
+	function showSavings() {
+  	    var p = document.getElementById("t2");
+	    var displaySetting = p.style.display;
+	    var button = document.getElementById('but2');
+	    if (displaySetting == 'block') {
+	        p.style.display = 'none';
+		button.innerHTML = 'Show Transactions';
+	    }
+	    else{
+		p.style.display = 'block';
+		button.innerHTML = 'Hide Transactions';
+  	    }
+	}
+
+	</script>
+    </main>
+</body>
