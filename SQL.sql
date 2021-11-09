@@ -29,3 +29,10 @@ ADD USDBalance int NOT NULL DEFAULT 0;
 
 ALTER TABLE Accounts
 ADD GBPBalance int NOT NULL DEFAULT 0;
+
+CREATE TABLE Contacts (
+    id int AUTO_INCREMENT,
+    username varchar(30),
+    usernameTo varchar(30),
+    PRIMARY KEY (id)
+);
