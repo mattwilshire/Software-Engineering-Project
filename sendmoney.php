@@ -52,7 +52,16 @@
                                     $stmt->bind_param('is', $amount, $accountNumber);
                                     if($stmt->execute()) {
                                         $_SESSION['balance'] -= $amount;
-                                        $success = "Sent money to $personTo.";
+                                        if($stmt = mysqli_prepare($SQL_Connection, "INSERT INTO Transactions (accid, type, message, amount) VALUES (?, ?, ?, ?)")) {
+                                            $type = 1;
+                                            $message = "Sent money to $personTo.";
+                                            $stmt->bind_param('iisi', $accountNumber, $type, $message, $amount);
+                                            if($stmt->execute()) {
+                                                $success = $message;
+                                            }
+                                        } else {
+                                            echo $stmt->error;
+                                        }
                                     } else {
                                         echo $stmt->error;
                                     }

@@ -29,13 +29,23 @@
 		{
 			if(isset($_POST['amount'])) 
 			{
+				$amount = intval($_POST['amount']);
 				$balance += intval($_POST['amount']);
 		
 				if($stmt = mysqli_prepare($SQL_Connection, "UPDATE Accounts SET balance=? WHERE accId=?"))
 				{
 					$stmt->bind_param('is', $balance, $accountNumber);
 					if($stmt->execute()) {
-						echo "Added Funds !";
+						if($stmt = mysqli_prepare($SQL_Connection, "INSERT INTO Transactions (accid, type, message, amount) VALUES (?, ?, ?, ?)")) {
+		                    $type = 0;
+		                    $message = "Added money using credit / debit card.";
+		                    $stmt->bind_param('iisi', $accountNumber, $type, $message, $amount);
+		                    if($stmt->execute()) {
+		                        echo "Added Funds !";
+		                    }
+		                } else {
+		                    echo $stmt->error;
+		                }
 					} 
 					else 
 					{

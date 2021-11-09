@@ -27,7 +27,7 @@
     }
 
     //Always update balance when user goes to home screen.
-    if($stmt = mysqli_prepare($SQL_Connection, "SELECT balance, USDBalance, GBPBalance FROM Accounts WHERE accId=?"))
+    if($stmt = mysqli_prepare($SQL_Connection, "SELECT balance, USDBalance, GBPBalance, savings FROM Accounts WHERE accId=?"))
     {
         $stmt->bind_param("s", $accountNumber);
         $stmt->execute();
@@ -37,6 +37,7 @@
             $_SESSION["balance"] = $array['balance'];
             $_SESSION['USDBalance'] = $array['USDBalance'];
             $_SESSION['GBPBalance'] = $array['GBPBalance'];
+            $_SESSION['savings'] = $array['savings'];
         }
         $stmt->close();
     } else {
@@ -46,6 +47,7 @@
     $balance = $_SESSION['balance'];
     $USDBalance = $_SESSION['USDBalance'];
 	$GBPBalance = $_SESSION['GBPBalance'];
+    $savings = $_SESSION['savings'];
 ?>
 
 <!DOCTYPE html>
@@ -65,17 +67,21 @@
                 <h1>Balance</h1>
                 <section>
                 	<section>
-	                    <h1>Euro</h1>
+	                    <h1>€</h1>
 	                    <h2><?php echo $balance; ?></h2>
 	                </section>
 	                <section>
-	                    <h1>USD</h1>
+	                    <h1>$</h1>
 	                    <h2><?php echo $USDBalance; ?></h2>
 	                </section>
 	                <section>
-	                    <h1>GBP</h1>
+	                    <h1>£</h1>
 	                    <h2><?php echo $GBPBalance; ?></h2>
 	                </section>
+                    <section>
+                        <h1>Savings (€)</h1>
+                        <h2><?php echo $savings; ?></h2>
+                    </section>
                 </section>
 
            </section>
@@ -95,6 +101,8 @@
         		<a href="/sendmoney.php">SEND MONEY</a>
         		<a href="/virtualcard.php">RENEW / DISABLE</a>
         		<a href="/exchange.php">CURRENCY EXCHANGE</a>
+                <a href="/transactions.php">TRANSACTIONS</a>
+                <a href="/savingsDeposit.php">SAVINGS</a>
         	</section>
 
         </main>
