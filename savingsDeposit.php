@@ -53,7 +53,7 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/deposit.css">
+    <link rel="stylesheet" type="text/css" href="css/deposits.css">
 </head>
 
 <body>
@@ -87,8 +87,12 @@
         
         <label>Do you wish to confirm deposit?</label> <br>
         <input type="submit" name="submit" value="Yes">
-        <input type="reset" value="No">   
+        <input type="reset" value="No">
       </form>
+
+        <p>
+            <a href="home.php">Back to home</a>
+        </p>
     </main>
     
 </body>

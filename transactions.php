@@ -30,7 +30,7 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="transactions.css">
+    <link rel="stylesheet" type="text/css" href="css/transactions.css">
 </head>
 
 <body>
@@ -44,11 +44,6 @@
 	<div class="div1">
 	<p>Current Account</p>
 	<button id="but1" onclick="showCurrent();">Current Account</button>	
-	</div>
-	
-	<div class="div1>
-	<p>Savings Account</p>
-	<button id= "but2" onclick="showSavings();"> Savings Account</button>
 	</div>
 		
 	<table id="t1"> 
@@ -117,9 +112,13 @@
 	  <td>50.00</td>
 	  <td>To Current A/C</td>
 	  <td>50.00</td>
-	</tr>
+	</tr>-->
 
-	</table>-->
+	</table>
+	
+	<p>
+		<a href="home.php">Back to home</a>
+	</p>
 
 	<script>
 	  function showCurrent() {
