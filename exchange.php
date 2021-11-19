@@ -63,9 +63,9 @@
 		
 		if(isset($_POST['sell'])) {
 			$currency = $_POST['currency'];
-			$balance += intval($_POST['amount']);
 			if ($currency == "USD") {
-				$USDBalance -= intval($_POST['amount']) * $EURUSD;
+				$USDBalance -= intval($_POST['amount']);
+				$balance += intval($_POST['amount']) / $EURUSD;
 				if($stmt = mysqli_prepare($SQL_Connection, "UPDATE Accounts SET balance=?, USDBalance=? WHERE accId=?")) {
 					$stmt->bind_param('iis', $balance, $USDBalance, $accountNumber);
 					if($stmt->execute()) {
@@ -77,7 +77,8 @@
 				}
 			}
 			if ($currency == "GBP") {
-				$GBPBalance -= intval($_POST['amount']) * $EURGBP;
+				$GBPBalance -= intval($_POST['amount']);
+				$balance += intval($_POST['amount']) / $EURGBP;
 				if($stmt = mysqli_prepare($SQL_Connection, "UPDATE Accounts SET balance=?, GBPBalance=? WHERE accId=?")) {
 					$stmt->bind_param('iis', $balance, $GBPBalance, $accountNumber);
 					if($stmt->execute()) {
